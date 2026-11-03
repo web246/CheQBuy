@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071d2b">
+  <meta name="description" content="Explore the CheQBuy marketplace. Discover products, connect with verified suppliers and ship across Africa and the world.">
+  <title>CheQBuy Webapp — Shop, ship and discover</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="webapp.css">
+</head>
+<body>
+  <header class="app-header" id="top">
+    <a class="app-brand" href="#top" aria-label="CheQBuy Webapp home">
+      <img src="img/logo.png" alt="">
+      <span>CheQBuy<small>AFRICAN TRADE</small></span>
+    </a>
+    <nav class="top-links" aria-label="Main navigation">
+      <button class="top-link is-active" type="button" data-view="home">Home</button>
+      <button class="top-link" type="button" data-view="shop">Shop</button>
+      <a class="top-link" href="index.html#/services">Shipping</a>
+    </nav>
+    <button class="header-cta" type="button" data-view="cart">Your bag <span class="bag-count" id="headerCartCount">0</span></button>
+  </header>
+
+  <main>
+    <div class="app-view is-active" data-page="home">
+    <section class="app-hero app-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> Your gateway to global trade</span>
+        <h1 id="hero-title">Good finds.<br><span>Better trade.</span></h1>
+        <p>Discover standout products from trusted suppliers, then let CheQBuy handle the journey to your door.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#products">Explore marketplace <span aria-hidden="true">→</span></a>
+          <a class="button button-glass" href="index.html#/services">How shipping works</a>
+        </div>
+        <div class="hero-proof"><span class="proof-stars" aria-label="Five stars">★★★★★</span><span>Trusted sourcing · Clear shipping · Real support</span></div>
+      </div>
+      <div class="hero-art" aria-label="Featured trade products">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-product hero-product-main"><img src="img/iphone.jpg" alt="Featured smartphone"><span>Tech, on your terms</span></div>
+        <div class="hero-product hero-product-small"><img src="img/coffee.jpg" alt="Kenyan coffee"><span>Made to move</span></div>
+        <div class="hero-float"><span class="float-icon">✦</span><span><b>From source to doorstep</b><small>One trade partner, all the way</small></span></div>
+        <div class="hero-orb">CQ</div>
+      </div>
+      <a class="hero-scroll" href="#offers"><span></span> Scroll to discover</a>
+    </section>
+
+    <section class="app-shell offer-section" id="offers" aria-label="CheQBuy offers">
+      <article class="offer-card" id="offerCard">
+        <div class="offer-copy">
+          <span class="offer-kicker" id="offerKicker">THE SMARTER WAY TO IMPORT</span>
+          <h2 id="offerTitle">Your next big idea<br>starts with a better source.</h2>
+          <p id="offerText">Tell us what you need. We’ll find the right supplier and bring it to you.</p>
+          <a class="offer-link" id="offerLink" href="index.html#/contact">Start sourcing <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="offer-art"><img id="offerImage" src="img/generator.jpg" alt="Industrial goods ready for global shipping"><span class="offer-sticker">TRADE<br>WITHOUT<br>LIMITS</span></div>
+        <div class="offer-controls" aria-label="Choose promotion">
+          <button type="button" class="offer-dot is-active" data-offer="0" aria-label="Offer 1" aria-pressed="true"></button>
+          <button type="button" class="offer-dot" data-offer="1" aria-label="Offer 2" aria-pressed="false"></button>
+          <button type="button" class="offer-dot" data-offer="2" aria-label="Offer 3" aria-pressed="false"></button>
+        </div>
+      </article>
+    </section>
+
+    <section class="app-shell market-section" id="products" aria-labelledby="market-title">
+      <div class="section-heading">
+        <div><span class="section-kicker">A world of possibility</span><h2 id="market-title">Find your next <span>favourite.</span></h2><p>Thoughtful picks from suppliers and makers across our trade network.</p></div>
+        <div class="slider-controls">
+          <button type="button" class="round-control" id="productsPrev" aria-label="Previous products">←</button>
+          <button type="button" class="round-control" id="productsNext" aria-label="Next products">→</button>
+        </div>
+      </div>
+      <div class="category-pills" role="group" aria-label="Filter products by category">
+        <button type="button" class="category-pill is-active" data-category="All" aria-pressed="true">All finds</button>
+        <button type="button" class="category-pill" data-category="Electronics" aria-pressed="false">Electronics</button>
+        <button type="button" class="category-pill" data-category="Agricultural Products" aria-pressed="false">Food &amp; produce</button>
+        <button type="button" class="category-pill" data-category="Fashion & Textiles" aria-pressed="false">Fashion</button>
+        <button type="button" class="category-pill" data-category="Home & Living" aria-pressed="false">Home</button>
+        <button type="button" class="category-pill" data-category="Machinery" aria-pressed="false">Machinery</button>
+      </div>
+      <div class="product-track" id="productTrack" aria-live="polite"></div>
+      <div class="market-footer"><span><i></i> Every find has a route to your door.</span><a href="index.html#/shop">Visit full marketplace <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="app-shell ship-section" id="shipping">
+      <div class="ship-art"><img src="img/air.jpg" alt="Air freight shipment"><span class="ship-badge">WORLDWIDE<br>DELIVERY</span></div>
+      <div class="ship-copy"><span class="section-kicker">From here to anywhere</span><h2>Trade confidently.<br><span>We’ll get it there.</span></h2><p>From verified sourcing and freight to customs clearance and final delivery, we make every step feel simpler.</p>
+        <div class="ship-points"><span><i>01</i> One clear quote</span><span><i>02</i> Reliable freight</span><span><i>03</i> Live shipment tracking</span></div>
+        <a class="button button-dark" href="index.html#/calculator">Plan your shipment <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="app-shell final-cta">
+      <div><span class="section-kicker">Your next move starts here</span><h2>Ready to make a<br>global connection?</h2></div>
+      <a class="button button-light" href="index.html#/contact">Talk to our trade team <span aria-hidden="true">↗</span></a>
+      <div class="cta-glow"></div>
+    </section>
+    </div>
+
+    <section class="app-view shop-view app-shell" data-page="shop" aria-labelledby="shop-title" hidden>
+      <div class="shop-intro"><span class="section-kicker">THE CHEQBUY MARKETPLACE</span><h1 id="shop-title">Find your next <span>great thing.</span></h1><p>Explore handpicked finds and source with confidence. Every item has a route to your door.</p></div>
+      <label class="shop-search"><span aria-hidden="true">⌕</span><input id="shopSearch" type="search" placeholder="Search products, categories or origins" autocomplete="off"><kbd>⌘ K</kbd></label>
+      <div class="shop-filters" role="group" aria-label="Filter products by category">
+        <button type="button" class="category-pill is-active" data-shop-category="All" aria-pressed="true">Everything</button>
+        <button type="button" class="category-pill" data-shop-category="Electronics" aria-pressed="false">Electronics</button>
+        <button type="button" class="category-pill" data-shop-category="Agricultural Products" aria-pressed="false">Food &amp; produce</button>
+        <button type="button" class="category-pill" data-shop-category="Fashion & Textiles" aria-pressed="false">Fashion</button>
+        <button type="button" class="category-pill" data-shop-category="Home & Living" aria-pressed="false">Home</button>
+        <button type="button" class="category-pill" data-shop-category="Machinery" aria-pressed="false">Machinery</button>
+      </div>
+      <div class="shop-results"><span id="shopResultCount"></span><span>Prices shown in KES</span></div>
+      <div class="shop-grid" id="shopGrid"></div>
+    </section>
+
+    <section class="app-view simple-view app-shell" data-page="cart" aria-labelledby="cart-title" hidden>
+      <div class="simple-heading"><span class="section-kicker">YOUR SHOPPING BAG</span><h1 id="cart-title">A good choice.</h1><p>Your selected items, ready for the next step.</p></div>
+      <div class="cart-layout"><div class="cart-items" id="cartItems"></div><aside class="cart-summary" id="cartSummary"></aside></div>
+    </section>
+
+    <section class="app-view simple-view app-shell" data-page="track" aria-labelledby="track-title" hidden>
+      <div class="simple-heading"><span class="section-kicker">EVERY STEP, IN SIGHT</span><h1 id="track-title">Your orders, moving.</h1><p>Keep an eye on a shipment or get help from the CheQBuy trade team.</p></div>
+      <div class="feature-panel"><div class="feature-symbol">◎</div><div><h2>Track a shipment</h2><p>Check the latest shipment milestones using your CheQBuy reference number.</p></div><a class="button button-dark" href="index.html#/track">Open shipment tracking <span aria-hidden="true">→</span></a></div>
+      <div class="feature-panel"><div class="feature-symbol">↗</div><div><h2>Need to ship something?</h2><p>Ask us to quote your freight, customs clearance and delivery together.</p></div><a class="button button-light" href="index.html#/contact">Request a quote <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="app-view simple-view app-shell" data-page="account" aria-labelledby="account-title" hidden>
+      <div class="simple-heading"><span class="section-kicker">YOUR TRADE, YOUR WAY</span><h1 id="account-title">Welcome to CheQBuy.</h1><p>Our trade team is here to help you source, ship and grow with confidence.</p></div>
+      <div class="account-panel"><img src="img/logo.png" alt=""><h2>Trade support, with a real team behind it.</h2><p>Contact us for help with a product, a quote or an existing shipment. We’ll help you take the next step.</p><div class="account-actions"><a class="button button-dark" href="index.html#/contact">Talk to our team <span aria-hidden="true">→</span></a><a class="button button-outline" href="index.html#/about">About CheQBuy</a></div></div>
+    </section>
+  </main>
+
+  <nav class="floating-nav" aria-label="App navigation">
+    <button class="nav-item is-active" type="button" data-view="home" aria-current="page"><span class="nav-icon">⌂</span><span>Home</span></button>
+    <button class="nav-item" type="button" data-view="shop"><span class="nav-icon">⌕</span><span>Shop</span></button>
+    <button class="nav-item nav-cart" type="button" data-view="cart"><span class="nav-icon">◒</span><span>Bag</span><i class="nav-count" id="navCartCount" hidden>0</i></button>
+    <button class="nav-item" type="button" data-view="track"><span class="nav-icon">◎</span><span>Track</span></button>
+    <button class="nav-item" type="button" data-view="account"><span class="nav-icon">◉</span><span>Account</span></button>
+  </nav>
+
+  <script src="webapp.js"></script>
+</body>
+</html>
