@@ -199,7 +199,7 @@ function route(){timers.splice(0).forEach(clearInterval);closeAll();const raw=lo
  app.innerHTML=html;document.title=title==='CheQBuy African Trade'?title+' — Import · Export · Ship across Africa and the world':title+' | CheQBuy African Trade';
  const cur=seg[0]==='shop'?'#/shop':isHome?(anchor?'#/#'+anchor:'#/'):'#/';$('#cartBtn').hidden=seg[0]!=='shop';$('#links').innerHTML=NAV.map(n=>`<a href="${n[1]}" class="${n[1]===cur?'on':''}" ${n[1]===cur?'aria-current="page"':''}>${n[0]}</a>`).join('');$('#strip').innerHTML=NAV.map(n=>`<a href="${n[1]}" class="${n[1]===cur?'on':''}">${n[0]}</a>`).join('');
  $('#mlinks').innerHTML=NAV.map(n=>`<a href="${n[1]}" class="${n[1]===cur?'on':''}">${n[0]}</a>`).join('');
- init&&init();enhance(app);if(isHome){const hph=$('#hph');if(hph)hph.remove();$('.hg',app).style.gridTemplateColumns='1fr';heroInit();pages.trackInit();pages.calcInit();pages.contactInit()}
+ init&&init();enhance(app);if(isHome){heroInit();phone3d();pages.trackInit();pages.calcInit();pages.contactInit()}
  if(!RM)app.animate([{opacity:0,transform:'perspective(1400px) rotateX(9deg) translateY(36px)'},{opacity:1,transform:'none'}],{duration:750,easing:'cubic-bezier(.22,1,.36,1)'});
  anchor?setTimeout(()=>($('#'+anchor)||{scrollIntoView(){}}).scrollIntoView({behavior:RM?'auto':'smooth'}),140):scrollTo(0,0)}
 addEventListener('hashchange',route);drawCart();route();
